@@ -1,0 +1,787 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<rzone>
+    <device Dvendor="Renesas" Dname="R9A08G045S33GBG">
+        <processor Pname="CM33" Dcore="Cortex-M33" Dfpu="0" Dmpu="1" Dtz="TZ" Ddsp="0" Dendian="Little-endian" Dclock="250000000" DcoreVersion="r0p4" DnumInterrupts="480" DnumSauRegions="0" info="Cortex-M33"/>
+        <processor Pname="CM33_FPU" Dcore="Cortex-M33" Dfpu="1" Dmpu="1" Dtz="TZ" Ddsp="0" Dendian="Little-endian" Dclock="250000000" DcoreVersion="r0p4" DnumInterrupts="480" DnumSauRegions="0" info="Cortex-M33_FPU"/>
+    </device>
+    <resources>
+        <memories>
+            <memory name="SRAM_CODE_S" type="RAM" start="0x00000000" size="0x10000000" security=""/>
+            <memory name="SRAM_CODE_N" type="RAM" start="0x10000000" size="0x10000000" security=""/>
+            <memory name="SRAM_DATA_S" type="RAM" start="0x20000000" size="0x10000000" security=""/>
+            <memory name="SRAM_DATA_N" type="RAM" start="0x30000000" size="0x10000000" security=""/>
+            <memory name="DDR_S" type="RAM" start="0x60000000" size="0x10000000" security=""/>
+            <memory name="DDR_N" type="RAM" start="0x70000000" size="0x10000000" security=""/>
+            <memory name="XSPIFLASH_S" type="ROM" start="0x80000000" size="0x10000000" security=""/>
+            <memory name="XSPIFLASH_N" type="ROM" start="0x90000000" size="0x10000000" security=""/>
+        </memories>
+        <peripherals>
+            <peripheral name="MTU3a" start="0x50000000" start_s="0x40000000" physical="0x10000000" size="0x00040000" info="Multi-Function Timer Pulse Unit 3"/>
+            <group name="GPT" start="0x50048000" start_s="0x40048000" physical="0x10048000" size="0x00000800" info="General PWM Timer">
+                <peripheral name="GPT0" start="0x50048000" start_s="0x40048000" physical="0x10048000" size="0x00000800"/>
+                <peripheral name="GPT1" start="0x50048000" start_s="0x40048000" physical="0x10048000" size="0x00000800"/>
+                <peripheral name="GPT2" start="0x50048000" start_s="0x40048000" physical="0x10048000" size="0x00000800"/>
+                <peripheral name="GPT3" start="0x50048000" start_s="0x40048000" physical="0x10048000" size="0x00000800"/>
+                <peripheral name="GPT4" start="0x50048000" start_s="0x40048000" physical="0x10048000" size="0x00000800"/>
+                <peripheral name="GPT5" start="0x50048000" start_s="0x40048000" physical="0x10048000" size="0x00000800"/>
+                <peripheral name="GPT6" start="0x50048000" start_s="0x40048000" physical="0x10048000" size="0x00000800"/>
+                <peripheral name="GPT7" start="0x50048000" start_s="0x40048000" physical="0x10048000" size="0x00000800"/>
+            </group>
+            <group name="POEG" start="0x50048800" start_s="0x40048800" physical="0x10048800" size="0x00000400" info="Port Output Enable for GPT">
+                <peripheral name="POEG0" start="0x50048800" start_s="0x40048800" physical="0x10048800" size="0x00000400"/>
+                <peripheral name="POEG1" start="0x50048C00" start_s="0x40048C00" physical="0x10048C00" size="0x00000400"/>
+                <peripheral name="POEG2" start="0x50049000" start_s="0x40049000" physical="0x10049000" size="0x00000400"/>
+                <peripheral name="POEG3" start="0x50049400" start_s="0x40049400" physical="0x10049400" size="0x00000400"/>
+            </group>
+            <peripheral name="POE3" start="0x50049800" start_s="0x40049800" physical="0x10049800" size="0x00000400" info="Port Output Enable 3"/>
+            <group name="SCIF" start="0x5004B800" start_s="0x4004B800" physical="0x1004B800" size="0x00000400" info="Serial Communication Interface with FIFO">
+                <peripheral name="SCIF0" start="0x5004B800" start_s="0x4004B800" physical="0x1004B800" size="0x00000400"/>
+                <peripheral name="SCIF1" start="0x5004BC00" start_s="0x4004BC00" physical="0x1004BC00" size="0x00000400"/>
+                <peripheral name="SCIF2" start="0x5004C000" start_s="0x4004C000" physical="0x1004C000" size="0x00000400"/>
+                <peripheral name="SCIF3" start="0x5004C400" start_s="0x4004C400" physical="0x1004C400" size="0x00000400"/>
+                <peripheral name="SCIF4" start="0x5004C800" start_s="0x4004C800" physical="0x1004C800" size="0x00000400"/>
+                <peripheral name="SCIF5" start="0x5004E000" start_s="0x4004E000" physical="0x1004E000" size="0x00000400"/>
+            </group>
+            <peripheral name="IrDA" start="0x5004CC00" start_s="0x4004CC00" physical="0x1004CC00" size="0x00000400" info="Infrared Data Association"/>
+            <group name="SCIg" start="0x5004D000" start_s="0x4004D000" physical="0x1004D000" size="0x00000400" info="Serial Communication Interface">
+                <peripheral name="SCIg0" start="0x5004D000" start_s="0x4004D000" physical="0x1004D000" size="0x00000400"/>
+                <peripheral name="SCIg1" start="0x5004D400" start_s="0x4004D400" physical="0x1004D400" size="0x00000400"/>
+            </group>
+            <peripheral name="RTCA-3" start="0x5004EC00" start_s="0x4004EC00" physical="0x1004EC00" size="0x00000400" info="Realtime Clock"/>
+            <peripheral name="ADC" start="0x50058000" start_s="0x40058000" physical="0x10058000" size="0x00001000" info="A/D Converter"/>
+            <peripheral name="TSU" start="0x50059000" start_s="0x40059000" physical="0x10059000" size="0x00001000" info="Thermal Sensor Unit"/>
+            <peripheral name="PDM" start="0x5005A000" start_s="0x4005A000" physical="0x1005A000" size="0x00001000" info="PDM Interface"/>
+            <peripheral name="I3C" start="0x5005B000" start_s="0x4005B000" physical="0x1005B000" size="0x00001000" info="I3C Bus Interface"/>
+            <peripheral name="VBATTB" start="0x5005C000" start_s="0x4005C000" physical="0x1005C000" size="0x00001000" info="Battery Backup Function"/>
+            <peripheral name="xSPI_REG" start="0x50060000" start_s="0x40060000" physical="0x10060000" size="0x00010000" info="Expanded Serial Peripheral Interface"/>
+            <peripheral name="xSPI_Write_Buf" start="0x50070000" start_s="0x40070000" physical="0x10070000" size="0x00010000" info="Expanded Serial Peripheral Interface"/>
+            <peripheral name="" start="0x50080000" start_s="0x40080000" physical="0x10080000" size="0x00010000" info="Octa Memory Controller"/>
+            <group name="RIIC" start="0x50090000" start_s="0x40090000" physical="0x10090000" size="0x00000400" info="I2C Bus Interface">
+                <peripheral name="RIIC0" start="0x50090000" start_s="0x40090000" physical="0x10090000" size="0x00000400"/>
+                <peripheral name="RIIC1" start="0x50090400" start_s="0x40090400" physical="0x10090400" size="0x00000400"/>
+                <peripheral name="RIIC2" start="0x50090800" start_s="0x40090800" physical="0x10090800" size="0x00000400"/>
+                <peripheral name="RIIC3" start="0x50090C00" start_s="0x40090C00" physical="0x10090C00" size="0x00000400"/>
+            </group>
+            <peripheral name="SRC_MEM" start="0x500A0000" start_s="0x400A0000" physical="0x100A0000" size="0x00007000" info="Sampling Rate Converter"/>
+            <peripheral name="SRC_REG" start="0x500A7000" start_s="0x400A7000" physical="0x100A7000" size="0x00001000" info="Sampling Rate Converter"/>
+            <group name="SSIF" start="0x500A8000" start_s="0x400A8000" physical="0x100A8000" size="0x00000400" info="Serial Sound Interface">
+                <peripheral name="SSIF0" start="0x500A8000" start_s="0x400A8000" physical="0x100A8000" size="0x00000400"/>
+                <peripheral name="SSIF1" start="0x500A8400" start_s="0x400A8400" physical="0x100A8400" size="0x00000400"/>
+                <peripheral name="SSIF2" start="0x500A8800" start_s="0x400A8800" physical="0x100A8800" size="0x00000400"/>
+                <peripheral name="SSIF3" start="0x500A8C00" start_s="0x400A8C00" physical="0x100A8C00" size="0x00000400"/>
+            </group>
+            <peripheral name="SPDIF" start="0x500A9000" start_s="0x400A9000" physical="0x100A9000" size="0x00001000" info="Renesas SPIDF Interface"/>
+            <group name="RSPI" start="0x500AA000" start_s="0x400AA000" physical="0x100AA000" size="0x00000400" info="Renesas Serial Peripheral Interface">
+                <peripheral name="RSPI0" start="0x500AA000" start_s="0x400AA000" physical="0x100AA000" size="0x00000400"/>
+                <peripheral name="RSPI1" start="0x500AA400" start_s="0x400AA400" physical="0x100AA400" size="0x00000400"/>
+                <peripheral name="RSPI2" start="0x500AA800" start_s="0x400AA800" physical="0x100AA800" size="0x00000400"/>
+                <peripheral name="RSPI3" start="0x500AAC00" start_s="0x400AAC00" physical="0x100AAC00" size="0x00000400"/>
+                <peripheral name="RSPI4" start="0x500AB000" start_s="0x400AB000" physical="0x100AB000" size="0x00000400"/>
+            </group>
+            <peripheral name="CANFD" start="0x500C0000" start_s="0x400C0000" physical="0x100C0000" size="0x00020000" info="CAN-FD Interface"/>
+            <peripheral name="MHU" start="0x50400000" start_s="0x40400000" physical="0x10400000" size="0x00010000" info="Message Handling Unit"/>
+            <peripheral name="CST" start="0x50C00000" start_s="0x40C00000" physical="0x10C00000" size="0x00400000" info="CoreSight"/>
+            <peripheral name="SYC" start="0x51000000" start_s="0x41000000" physical="0x11000000" size="0x00010000" info="System Counter"/>
+            <peripheral name="CPG" start="0x51010000" start_s="0x41010000" physical="0x11010000" size="0x00010000" info="Clock Pulse Generator"/>
+            <peripheral name="SYSC" start="0x51020000" start_s="0x41020000" physical="0x11020000" size="0x00010000" info="System Controller"/>
+            <group name="GPIO" start="0x51030000" start_s="0x41030000" physical="0x11030000" size="0x1" info="I/O Ports">
+                <peripheral name="P_20" start="0x51030020" start_s="0x41030020" physical="0x11030020" size="0x1">
+                    <slot name="P0_0"/>
+                    <slot name="P0_1"/>
+                    <slot name="P0_2"/>
+                    <slot name="P0_3"/>
+                </peripheral>
+                <peripheral name="P_21" start="0x51030021" start_s="0x41030021" physical="0x11030021" size="0x1">
+                    <slot name="P5_0"/>
+                    <slot name="P5_1"/>
+                    <slot name="P5_2"/>
+                    <slot name="P5_3"/>
+                    <slot name="P5_4"/>
+                </peripheral>
+                <peripheral name="P_22" start="0x51030022" start_s="0x41030022" physical="0x11030022" size="0x1">
+                    <slot name="P6_0"/>
+                    <slot name="P6_1"/>
+                    <slot name="P6_2"/>
+                    <slot name="P6_3"/>
+                    <slot name="P6_4"/>
+                </peripheral>
+                <peripheral name="P_23" start="0x51030023" start_s="0x41030023" physical="0x11030023" size="0x1">
+                    <slot name="P11_0"/>
+                    <slot name="P11_1"/>
+                    <slot name="P11_2"/>
+                    <slot name="P11_3"/>
+                </peripheral>
+                <peripheral name="P_24" start="0x51030024" start_s="0x41030024" physical="0x11030024" size="0x1">
+                    <slot name="P12_0"/>
+                    <slot name="P12_1"/>
+                </peripheral>
+                <peripheral name="P_25" start="0x51030025" start_s="0x41030025" physical="0x11030025" size="0x1">
+                    <slot name="P13_0"/>
+                    <slot name="P13_1"/>
+                    <slot name="P13_2"/>
+                    <slot name="P13_3"/>
+                    <slot name="P13_4"/>
+                </peripheral>
+                <peripheral name="P_26" start="0x51030026" start_s="0x41030026" physical="0x11030026" size="0x1">
+                    <slot name="P14_0"/>
+                    <slot name="P14_1"/>
+                    <slot name="P14_2"/>
+                </peripheral>
+                <peripheral name="P_27" start="0x51030027" start_s="0x41030027" physical="0x11030027" size="0x1">
+                    <slot name="P15_0"/>
+                    <slot name="P15_1"/>
+                    <slot name="P15_2"/>
+                    <slot name="P15_3"/>
+                </peripheral>
+                <peripheral name="P_28" start="0x51030028" start_s="0x41030028" physical="0x11030028" size="0x1">
+                    <slot name="P16_0"/>
+                    <slot name="P16_1"/>
+                </peripheral>
+                <peripheral name="P_29" start="0x51030029" start_s="0x41030029" physical="0x11030029" size="0x1">
+                    <slot name="P17_0"/>
+                    <slot name="P17_1"/>
+                    <slot name="P17_2"/>
+                    <slot name="P17_3"/>
+                </peripheral>
+                <peripheral name="P_2A" start="0x5103002A" start_s="0x4103002A" physical="0x1103002A" size="0x1">
+                    <slot name="P18_0"/>
+                    <slot name="P18_1"/>
+                    <slot name="P18_2"/>
+                    <slot name="P18_3"/>
+                    <slot name="P18_4"/>
+                    <slot name="P18_5"/>
+                </peripheral>
+                <peripheral name="P_30" start="0x51030030" start_s="0x41030030" physical="0x11030030" size="0x1">
+                    <slot name="P1_0"/>
+                    <slot name="P1_1"/>
+                    <slot name="P1_2"/>
+                    <slot name="P1_3"/>
+                    <slot name="P1_4"/>
+                </peripheral>
+                <peripheral name="P_31" start="0x51030031" start_s="0x41030031" physical="0x11030031" size="0x1">
+                    <slot name="P2_0"/>
+                    <slot name="P2_1"/>
+                    <slot name="P2_2"/>
+                    <slot name="P2_3"/>
+                </peripheral>
+                <peripheral name="P_32" start="0x51030032" start_s="0x41030032" physical="0x11030032" size="0x1">
+                    <slot name="P3_0"/>
+                    <slot name="P3_1"/>
+                    <slot name="P3_2"/>
+                    <slot name="P3_3"/>
+                </peripheral>
+                <peripheral name="P_33" start="0x51030033" start_s="0x41030033" physical="0x11030033" size="0x1">
+                    <slot name="P4_0"/>
+                    <slot name="P4_1"/>
+                    <slot name="P4_2"/>
+                    <slot name="P4_3"/>
+                    <slot name="P4_4"/>
+                    <slot name="P4_5"/>
+                </peripheral>
+                <peripheral name="P_34" start="0x51030034" start_s="0x41030034" physical="0x11030034" size="0x1">
+                    <slot name="P7_0"/>
+                    <slot name="P7_1"/>
+                    <slot name="P7_2"/>
+                    <slot name="P7_3"/>
+                    <slot name="P7_4"/>
+                </peripheral>
+                <peripheral name="P_35" start="0x51030035" start_s="0x41030035" physical="0x11030035" size="0x1">
+                    <slot name="P8_0"/>
+                    <slot name="P8_1"/>
+                    <slot name="P8_2"/>
+                    <slot name="P8_3"/>
+                    <slot name="P8_4"/>
+                </peripheral>
+                <peripheral name="P_36" start="0x51030036" start_s="0x41030036" physical="0x11030036" size="0x1">
+                    <slot name="P9_0"/>
+                    <slot name="P9_1"/>
+                    <slot name="P9_2"/>
+                    <slot name="P9_3"/>
+                </peripheral>
+                <peripheral name="P_37" start="0x51030037" start_s="0x41030037" physical="0x11030037" size="0x1">
+                    <slot name="P10_0"/>
+                    <slot name="P10_1"/>
+                    <slot name="P10_2"/>
+                    <slot name="P10_3"/>
+                    <slot name="P10_4"/>
+                </peripheral>
+            </group>
+            <peripheral name="INTC" start="0x51050000" start_s="0x41050000" physical="0x11050000" size="0x00010000" info="Interrupt Controller">
+                <slot name="IRQ0"/>
+                <slot name="IRQ1"/>
+                <slot name="IRQ2"/>
+                <slot name="IRQ3"/>
+                <slot name="IRQ4"/>
+                <slot name="IRQ5"/>
+                <slot name="IRQ6"/>
+                <slot name="IRQ7"/>
+                <slot name="IRQ8"/>
+                <slot name="IRQ9"/>
+                <slot name="IRQ10"/>
+                <slot name="IRQ11"/>
+                <slot name="IRQ12"/>
+                <slot name="IRQ13"/>
+                <slot name="IRQ14"/>
+                <slot name="IRQ15"/>
+                <slot name="IRQ16"/>
+                <slot name="IRQ17"/>
+                <slot name="IRQ18"/>
+                <slot name="IRQ19"/>
+                <slot name="IRQ20"/>
+                <slot name="IRQ21"/>
+                <slot name="IRQ22"/>
+                <slot name="IRQ23"/>
+                <slot name="IRQ24"/>
+                <slot name="IRQ25"/>
+                <slot name="IRQ26"/>
+                <slot name="IRQ27"/>
+                <slot name="IRQ28"/>
+                <slot name="IRQ29"/>
+                <slot name="IRQ30"/>
+                <slot name="IRQ31"/>
+                <slot name="IRQ32"/>
+                <slot name="IRQ33"/>
+                <slot name="IRQ34"/>
+                <slot name="IRQ35"/>
+                <slot name="IRQ36"/>
+                <slot name="IRQ37"/>
+                <slot name="IRQ38"/>
+                <slot name="IRQ39"/>
+                <slot name="IRQ40"/>
+                <slot name="IRQ41"/>
+                <slot name="IRQ42"/>
+                <slot name="IRQ43"/>
+                <slot name="IRQ44"/>
+                <slot name="IRQ45"/>
+                <slot name="IRQ46"/>
+                <slot name="IRQ47"/>
+                <slot name="IRQ48"/>
+                <slot name="IRQ49"/>
+                <slot name="IRQ50"/>
+                <slot name="IRQ51"/>
+                <slot name="IRQ52"/>
+                <slot name="IRQ53"/>
+                <slot name="IRQ54"/>
+                <slot name="IRQ55"/>
+                <slot name="IRQ56"/>
+                <slot name="IRQ57"/>
+                <slot name="IRQ58"/>
+                <slot name="IRQ59"/>
+                <slot name="IRQ60"/>
+                <slot name="IRQ61"/>
+                <slot name="IRQ62"/>
+                <slot name="IRQ63"/>
+                <slot name="IRQ64"/>
+                <slot name="IRQ65"/>
+                <slot name="IRQ66"/>
+                <slot name="IRQ67"/>
+                <slot name="IRQ68"/>
+                <slot name="IRQ69"/>
+                <slot name="IRQ70"/>
+                <slot name="IRQ71"/>
+                <slot name="IRQ72"/>
+                <slot name="IRQ73"/>
+                <slot name="IRQ74"/>
+                <slot name="IRQ75"/>
+                <slot name="IRQ76"/>
+                <slot name="IRQ77"/>
+                <slot name="IRQ78"/>
+                <slot name="IRQ79"/>
+                <slot name="IRQ80"/>
+                <slot name="IRQ81"/>
+                <slot name="IRQ82"/>
+                <slot name="IRQ83"/>
+                <slot name="IRQ84"/>
+                <slot name="IRQ85"/>
+                <slot name="IRQ86"/>
+                <slot name="IRQ87"/>
+                <slot name="IRQ88"/>
+                <slot name="IRQ89"/>
+                <slot name="IRQ90"/>
+                <slot name="IRQ91"/>
+                <slot name="IRQ92"/>
+                <slot name="IRQ93"/>
+                <slot name="IRQ94"/>
+                <slot name="IRQ95"/>
+                <slot name="IRQ96"/>
+                <slot name="IRQ97"/>
+                <slot name="IRQ98"/>
+                <slot name="IRQ99"/>
+                <slot name="IRQ100"/>
+                <slot name="IRQ101"/>
+                <slot name="IRQ102"/>
+                <slot name="IRQ103"/>
+                <slot name="IRQ104"/>
+                <slot name="IRQ105"/>
+                <slot name="IRQ106"/>
+                <slot name="IRQ107"/>
+                <slot name="IRQ108"/>
+                <slot name="IRQ109"/>
+                <slot name="IRQ110"/>
+                <slot name="IRQ111"/>
+                <slot name="IRQ112"/>
+                <slot name="IRQ113"/>
+                <slot name="IRQ114"/>
+                <slot name="IRQ115"/>
+                <slot name="IRQ116"/>
+                <slot name="IRQ117"/>
+                <slot name="IRQ118"/>
+                <slot name="IRQ119"/>
+                <slot name="IRQ120"/>
+                <slot name="IRQ121"/>
+                <slot name="IRQ122"/>
+                <slot name="IRQ123"/>
+                <slot name="IRQ124"/>
+                <slot name="IRQ125"/>
+                <slot name="IRQ126"/>
+                <slot name="IRQ127"/>
+                <slot name="IRQ128"/>
+                <slot name="IRQ129"/>
+                <slot name="IRQ130"/>
+                <slot name="IRQ131"/>
+                <slot name="IRQ132"/>
+                <slot name="IRQ133"/>
+                <slot name="IRQ134"/>
+                <slot name="IRQ135"/>
+                <slot name="IRQ136"/>
+                <slot name="IRQ137"/>
+                <slot name="IRQ138"/>
+                <slot name="IRQ139"/>
+                <slot name="IRQ140"/>
+                <slot name="IRQ141"/>
+                <slot name="IRQ142"/>
+                <slot name="IRQ143"/>
+                <slot name="IRQ144"/>
+                <slot name="IRQ145"/>
+                <slot name="IRQ146"/>
+                <slot name="IRQ147"/>
+                <slot name="IRQ148"/>
+                <slot name="IRQ149"/>
+                <slot name="IRQ150"/>
+                <slot name="IRQ151"/>
+                <slot name="IRQ152"/>
+                <slot name="IRQ153"/>
+                <slot name="IRQ154"/>
+                <slot name="IRQ155"/>
+                <slot name="IRQ156"/>
+                <slot name="IRQ157"/>
+                <slot name="IRQ158"/>
+                <slot name="IRQ159"/>
+                <slot name="IRQ160"/>
+                <slot name="IRQ161"/>
+                <slot name="IRQ162"/>
+                <slot name="IRQ163"/>
+                <slot name="IRQ164"/>
+                <slot name="IRQ165"/>
+                <slot name="IRQ166"/>
+                <slot name="IRQ167"/>
+                <slot name="IRQ168"/>
+                <slot name="IRQ169"/>
+                <slot name="IRQ170"/>
+                <slot name="IRQ171"/>
+                <slot name="IRQ172"/>
+                <slot name="IRQ173"/>
+                <slot name="IRQ174"/>
+                <slot name="IRQ175"/>
+                <slot name="IRQ176"/>
+                <slot name="IRQ177"/>
+                <slot name="IRQ178"/>
+                <slot name="IRQ179"/>
+                <slot name="IRQ180"/>
+                <slot name="IRQ181"/>
+                <slot name="IRQ182"/>
+                <slot name="IRQ183"/>
+                <slot name="IRQ184"/>
+                <slot name="IRQ185"/>
+                <slot name="IRQ186"/>
+                <slot name="IRQ187"/>
+                <slot name="IRQ188"/>
+                <slot name="IRQ189"/>
+                <slot name="IRQ190"/>
+                <slot name="IRQ191"/>
+                <slot name="IRQ192"/>
+                <slot name="IRQ193"/>
+                <slot name="IRQ194"/>
+                <slot name="IRQ195"/>
+                <slot name="IRQ196"/>
+                <slot name="IRQ197"/>
+                <slot name="IRQ198"/>
+                <slot name="IRQ199"/>
+                <slot name="IRQ200"/>
+                <slot name="IRQ201"/>
+                <slot name="IRQ202"/>
+                <slot name="IRQ203"/>
+                <slot name="IRQ204"/>
+                <slot name="IRQ205"/>
+                <slot name="IRQ206"/>
+                <slot name="IRQ207"/>
+                <slot name="IRQ208"/>
+                <slot name="IRQ209"/>
+                <slot name="IRQ210"/>
+                <slot name="IRQ211"/>
+                <slot name="IRQ212"/>
+                <slot name="IRQ213"/>
+                <slot name="IRQ214"/>
+                <slot name="IRQ215"/>
+                <slot name="IRQ216"/>
+                <slot name="IRQ217"/>
+                <slot name="IRQ218"/>
+                <slot name="IRQ219"/>
+                <slot name="IRQ220"/>
+                <slot name="IRQ221"/>
+                <slot name="IRQ222"/>
+                <slot name="IRQ223"/>
+                <slot name="IRQ224"/>
+                <slot name="IRQ225"/>
+                <slot name="IRQ226"/>
+                <slot name="IRQ227"/>
+                <slot name="IRQ228"/>
+                <slot name="IRQ229"/>
+                <slot name="IRQ230"/>
+                <slot name="IRQ231"/>
+                <slot name="IRQ232"/>
+                <slot name="IRQ233"/>
+                <slot name="IRQ234"/>
+                <slot name="IRQ235"/>
+                <slot name="IRQ236"/>
+                <slot name="IRQ237"/>
+                <slot name="IRQ238"/>
+                <slot name="IRQ239"/>
+                <slot name="IRQ240"/>
+                <slot name="IRQ241"/>
+                <slot name="IRQ242"/>
+                <slot name="IRQ243"/>
+                <slot name="IRQ244"/>
+                <slot name="IRQ245"/>
+                <slot name="IRQ246"/>
+                <slot name="IRQ247"/>
+                <slot name="IRQ248"/>
+                <slot name="IRQ249"/>
+                <slot name="IRQ250"/>
+                <slot name="IRQ251"/>
+                <slot name="IRQ252"/>
+                <slot name="IRQ253"/>
+                <slot name="IRQ254"/>
+                <slot name="IRQ255"/>
+                <slot name="IRQ256"/>
+                <slot name="IRQ257"/>
+                <slot name="IRQ258"/>
+                <slot name="IRQ259"/>
+                <slot name="IRQ260"/>
+                <slot name="IRQ261"/>
+                <slot name="IRQ262"/>
+                <slot name="IRQ263"/>
+                <slot name="IRQ264"/>
+                <slot name="IRQ265"/>
+                <slot name="IRQ266"/>
+                <slot name="IRQ267"/>
+                <slot name="IRQ268"/>
+                <slot name="IRQ269"/>
+                <slot name="IRQ270"/>
+                <slot name="IRQ271"/>
+                <slot name="IRQ272"/>
+                <slot name="IRQ273"/>
+                <slot name="IRQ274"/>
+                <slot name="IRQ275"/>
+                <slot name="IRQ276"/>
+                <slot name="IRQ277"/>
+                <slot name="IRQ278"/>
+                <slot name="IRQ279"/>
+                <slot name="IRQ280"/>
+                <slot name="IRQ281"/>
+                <slot name="IRQ282"/>
+                <slot name="IRQ283"/>
+                <slot name="IRQ284"/>
+                <slot name="IRQ285"/>
+                <slot name="IRQ286"/>
+                <slot name="IRQ287"/>
+                <slot name="IRQ288"/>
+                <slot name="IRQ289"/>
+                <slot name="IRQ290"/>
+                <slot name="IRQ291"/>
+                <slot name="IRQ292"/>
+                <slot name="IRQ293"/>
+                <slot name="IRQ294"/>
+                <slot name="IRQ295"/>
+                <slot name="IRQ296"/>
+                <slot name="IRQ297"/>
+                <slot name="IRQ298"/>
+                <slot name="IRQ299"/>
+                <slot name="IRQ300"/>
+                <slot name="IRQ301"/>
+                <slot name="IRQ302"/>
+                <slot name="IRQ303"/>
+                <slot name="IRQ304"/>
+                <slot name="IRQ305"/>
+                <slot name="IRQ306"/>
+                <slot name="IRQ307"/>
+                <slot name="IRQ308"/>
+                <slot name="IRQ309"/>
+                <slot name="IRQ310"/>
+                <slot name="IRQ311"/>
+                <slot name="IRQ312"/>
+                <slot name="IRQ313"/>
+                <slot name="IRQ314"/>
+                <slot name="IRQ315"/>
+                <slot name="IRQ316"/>
+                <slot name="IRQ317"/>
+                <slot name="IRQ318"/>
+                <slot name="IRQ319"/>
+                <slot name="IRQ320"/>
+                <slot name="IRQ321"/>
+                <slot name="IRQ322"/>
+                <slot name="IRQ323"/>
+                <slot name="IRQ324"/>
+                <slot name="IRQ325"/>
+                <slot name="IRQ326"/>
+                <slot name="IRQ327"/>
+                <slot name="IRQ328"/>
+                <slot name="IRQ329"/>
+                <slot name="IRQ330"/>
+                <slot name="IRQ331"/>
+                <slot name="IRQ332"/>
+                <slot name="IRQ333"/>
+                <slot name="IRQ334"/>
+                <slot name="IRQ335"/>
+                <slot name="IRQ336"/>
+                <slot name="IRQ337"/>
+                <slot name="IRQ338"/>
+                <slot name="IRQ339"/>
+                <slot name="IRQ340"/>
+                <slot name="IRQ341"/>
+                <slot name="IRQ342"/>
+                <slot name="IRQ343"/>
+                <slot name="IRQ344"/>
+                <slot name="IRQ345"/>
+                <slot name="IRQ346"/>
+                <slot name="IRQ347"/>
+                <slot name="IRQ348"/>
+                <slot name="IRQ349"/>
+                <slot name="IRQ350"/>
+                <slot name="IRQ351"/>
+                <slot name="IRQ352"/>
+                <slot name="IRQ353"/>
+                <slot name="IRQ354"/>
+                <slot name="IRQ355"/>
+                <slot name="IRQ356"/>
+                <slot name="IRQ357"/>
+                <slot name="IRQ358"/>
+                <slot name="IRQ359"/>
+                <slot name="IRQ360"/>
+                <slot name="IRQ361"/>
+                <slot name="IRQ362"/>
+                <slot name="IRQ363"/>
+                <slot name="IRQ364"/>
+                <slot name="IRQ365"/>
+                <slot name="IRQ366"/>
+                <slot name="IRQ367"/>
+                <slot name="IRQ368"/>
+                <slot name="IRQ369"/>
+                <slot name="IRQ370"/>
+                <slot name="IRQ371"/>
+                <slot name="IRQ372"/>
+                <slot name="IRQ373"/>
+                <slot name="IRQ374"/>
+                <slot name="IRQ375"/>
+                <slot name="IRQ376"/>
+                <slot name="IRQ377"/>
+                <slot name="IRQ378"/>
+                <slot name="IRQ379"/>
+                <slot name="IRQ380"/>
+                <slot name="IRQ381"/>
+                <slot name="IRQ382"/>
+                <slot name="IRQ383"/>
+                <slot name="IRQ384"/>
+                <slot name="IRQ385"/>
+                <slot name="IRQ386"/>
+                <slot name="IRQ387"/>
+                <slot name="IRQ388"/>
+                <slot name="IRQ389"/>
+                <slot name="IRQ390"/>
+                <slot name="IRQ391"/>
+                <slot name="IRQ392"/>
+                <slot name="IRQ393"/>
+                <slot name="IRQ394"/>
+                <slot name="IRQ395"/>
+                <slot name="IRQ396"/>
+                <slot name="IRQ397"/>
+                <slot name="IRQ398"/>
+                <slot name="IRQ399"/>
+                <slot name="IRQ400"/>
+                <slot name="IRQ401"/>
+                <slot name="IRQ402"/>
+                <slot name="IRQ403"/>
+                <slot name="IRQ404"/>
+                <slot name="IRQ405"/>
+                <slot name="IRQ406"/>
+                <slot name="IRQ407"/>
+                <slot name="IRQ408"/>
+                <slot name="IRQ409"/>
+                <slot name="IRQ410"/>
+                <slot name="IRQ411"/>
+                <slot name="IRQ412"/>
+                <slot name="IRQ413"/>
+                <slot name="IRQ414"/>
+                <slot name="IRQ415"/>
+                <slot name="IRQ416"/>
+                <slot name="IRQ417"/>
+                <slot name="IRQ418"/>
+                <slot name="IRQ419"/>
+                <slot name="IRQ420"/>
+                <slot name="IRQ421"/>
+                <slot name="IRQ422"/>
+                <slot name="IRQ423"/>
+                <slot name="IRQ424"/>
+                <slot name="IRQ425"/>
+                <slot name="IRQ426"/>
+                <slot name="IRQ427"/>
+                <slot name="IRQ428"/>
+                <slot name="IRQ429"/>
+                <slot name="IRQ430"/>
+                <slot name="IRQ431"/>
+                <slot name="IRQ432"/>
+                <slot name="IRQ433"/>
+                <slot name="IRQ434"/>
+                <slot name="IRQ435"/>
+                <slot name="IRQ436"/>
+                <slot name="IRQ437"/>
+                <slot name="IRQ438"/>
+                <slot name="IRQ439"/>
+                <slot name="IRQ440"/>
+                <slot name="IRQ441"/>
+                <slot name="IRQ442"/>
+                <slot name="IRQ443"/>
+                <slot name="IRQ444"/>
+                <slot name="IRQ445"/>
+                <slot name="IRQ446"/>
+                <slot name="IRQ447"/>
+                <slot name="IRQ448"/>
+                <slot name="IRQ449"/>
+                <slot name="IRQ450"/>
+                <slot name="IRQ451"/>
+                <slot name="IRQ452"/>
+                <slot name="IRQ453"/>
+                <slot name="IRQ454"/>
+                <slot name="IRQ455"/>
+                <slot name="IRQ456"/>
+                <slot name="IRQ457"/>
+                <slot name="IRQ458"/>
+                <slot name="IRQ459"/>
+                <slot name="IRQ460"/>
+                <slot name="IRQ461"/>
+                <slot name="IRQ462"/>
+                <slot name="IRQ463"/>
+                <slot name="IRQ464"/>
+                <slot name="IRQ465"/>
+                <slot name="IRQ466"/>
+                <slot name="IRQ467"/>
+                <slot name="IRQ468"/>
+                <slot name="IRQ469"/>
+                <slot name="IRQ470"/>
+                <slot name="IRQ471"/>
+                <slot name="IRQ472"/>
+                <slot name="IRQ473"/>
+                <slot name="IRQ474"/>
+                <slot name="IRQ475"/>
+                <slot name="IRQ476"/>
+                <slot name="IRQ477"/>
+                <slot name="IRQ478"/>
+                <slot name="IRQ479"/>
+            </peripheral>
+            <group name="INTC" start="0x51050000" start_s="0x41050000" physical="0x11050000" size="0x00010000" info="Interrupt Controller (External Pins Only)">
+                <peripheral name="ICU_EXT_NMI" start="0x51050000" start_s="0x41050000" physical="0x11050000" size="0x00010000"/>
+                <peripheral name="ICU_EXT_IRQ0" start="0x51050000" start_s="0x41050000" physical="0x11050000" size="0x00010000"/>
+                <peripheral name="ICU_EXT_IRQ1" start="0x51050000" start_s="0x41050000" physical="0x11050000" size="0x00010000"/>
+                <peripheral name="ICU_EXT_IRQ2" start="0x51050000" start_s="0x41050000" physical="0x11050000" size="0x00010000"/>
+                <peripheral name="ICU_EXT_IRQ3" start="0x51050000" start_s="0x41050000" physical="0x11050000" size="0x00010000"/>
+                <peripheral name="ICU_EXT_IRQ4" start="0x51050000" start_s="0x41050000" physical="0x11050000" size="0x00010000"/>
+                <peripheral name="ICU_EXT_IRQ5" start="0x51050000" start_s="0x41050000" physical="0x11050000" size="0x00010000"/>
+                <peripheral name="ICU_EXT_IRQ6" start="0x51050000" start_s="0x41050000" physical="0x11050000" size="0x00010000"/>
+                <peripheral name="ICU_EXT_IRQ7" start="0x51050000" start_s="0x41050000" physical="0x11050000" size="0x00010000"/>
+            </group>
+            <group name="TZC" start="0x51200000" start_s="0x41200000" physical="0x11200000" size="0x00010000" info="TrustZone Address Space Controller">
+                <peripheral name="TZC_SRAM_ACPU0" start="0x51200000" start_s="0x41200000" physical="0x11200000" size="0x00010000"/>
+                <peripheral name="TZC_SRAM_ACPU1" start="0x51210000" start_s="0x41210000" physical="0x11210000" size="0x00010000"/>
+                <peripheral name="TZC_SRAM_MCPU0" start="0x51230000" start_s="0x41230000" physical="0x11230000" size="0x00010000"/>
+                <peripheral name="TZC_SRAM_MCPU1" start="0x51240000" start_s="0x41240000" physical="0x11240000" size="0x00010000"/>
+                <peripheral name="TZC_xSPI" start="0x51250000" start_s="0x41250000" physical="0x11250000" size="0x00010000"/>
+                <peripheral name="TZC_DDR" start="0x51260000" start_s="0x41260000" physical="0x11260000" size="0x00010000"/>
+            </group>
+            <group name="ECC" start="0x51270000" start_s="0x41270000" physical="0x11270000" size="0x00010000" info="Error Correcting Code (ECC) for On-Chip RAM">
+                <peripheral name="ECCRAM0" start="0x51270000" start_s="0x41270000" physical="0x11270000" size="0x00010000"/>
+                <peripheral name="ECCRAM1" start="0x51280000" start_s="0x41280000" physical="0x11280000" size="0x00010000"/>
+                <peripheral name="ECCRAM2" start="0x512A0000" start_s="0x412A0000" physical="0x112A0000" size="0x00010000"/>
+                <peripheral name="ECCRAM3" start="0x512B0000" start_s="0x412B0000" physical="0x112B0000" size="0x00010000"/>
+            </group>
+            <peripheral name="DDR_PHY" start="0x51400000" start_s="0x41400000" physical="0x11400000" size="0x00200000" info="DDr4/LPDDR4 SDRAM Memory Controller"/>
+            <peripheral name="DDR_REG" start="0x51600000" start_s="0x41600000" physical="0x11600000" size="0x00100000" info="DDr4/LPDDR4 SDRAM Memory Controller"/>
+            <group name="DMAC" start="0x51800000" start_s="0x41800000" physical="0x11800000" size="0x00010000" info="Direct Memory Access Controller">
+                <peripheral name="DMAC0_0" start="0x51800000" start_s="0x41800000" physical="0x11800000" size="0x00010000"/>
+                <peripheral name="DMAC0_1" start="0x51800000" start_s="0x41800000" physical="0x11800000" size="0x00010000"/>
+                <peripheral name="DMAC0_2" start="0x51800000" start_s="0x41800000" physical="0x11800000" size="0x00010000"/>
+                <peripheral name="DMAC0_3" start="0x51800000" start_s="0x41800000" physical="0x11800000" size="0x00010000"/>
+                <peripheral name="DMAC0_4" start="0x51800000" start_s="0x41800000" physical="0x11800000" size="0x00010000"/>
+                <peripheral name="DMAC0_5" start="0x51800000" start_s="0x41800000" physical="0x11800000" size="0x00010000"/>
+                <peripheral name="DMAC0_6" start="0x51800000" start_s="0x41800000" physical="0x11800000" size="0x00010000"/>
+                <peripheral name="DMAC0_7" start="0x51800000" start_s="0x41800000" physical="0x11800000" size="0x00010000"/>
+                <peripheral name="DMAC0_8" start="0x51800000" start_s="0x41800000" physical="0x11800000" size="0x00010000"/>
+                <peripheral name="DMAC0_9" start="0x51800000" start_s="0x41800000" physical="0x11800000" size="0x00010000"/>
+                <peripheral name="DMAC0_10" start="0x51800000" start_s="0x41800000" physical="0x11800000" size="0x00010000"/>
+                <peripheral name="DMAC0_11" start="0x51800000" start_s="0x41800000" physical="0x11800000" size="0x00010000"/>
+                <peripheral name="DMAC0_12" start="0x51800000" start_s="0x41800000" physical="0x11800000" size="0x00010000"/>
+                <peripheral name="DMAC0_13" start="0x51800000" start_s="0x41800000" physical="0x11800000" size="0x00010000"/>
+                <peripheral name="DMAC0_14" start="0x51800000" start_s="0x41800000" physical="0x11800000" size="0x00010000"/>
+                <peripheral name="DMAC0_15" start="0x51800000" start_s="0x41800000" physical="0x11800000" size="0x00010000"/>
+                <peripheral name="DMAC1_0" start="0x51800000" start_s="0x41800000" physical="0x11800000" size="0x00010000"/>
+                <peripheral name="DMAC1_1" start="0x51800000" start_s="0x41800000" physical="0x11800000" size="0x00010000"/>
+                <peripheral name="DMAC1_2" start="0x51800000" start_s="0x41800000" physical="0x11800000" size="0x00010000"/>
+                <peripheral name="DMAC1_3" start="0x51800000" start_s="0x41800000" physical="0x11800000" size="0x00010000"/>
+                <peripheral name="DMAC1_4" start="0x51800000" start_s="0x41800000" physical="0x11800000" size="0x00010000"/>
+                <peripheral name="DMAC1_5" start="0x51800000" start_s="0x41800000" physical="0x11800000" size="0x00010000"/>
+                <peripheral name="DMAC1_6" start="0x51800000" start_s="0x41800000" physical="0x11800000" size="0x00010000"/>
+                <peripheral name="DMAC1_7" start="0x51800000" start_s="0x41800000" physical="0x11800000" size="0x00010000"/>
+                <peripheral name="DMAC1_8" start="0x51800000" start_s="0x41800000" physical="0x11800000" size="0x00010000"/>
+                <peripheral name="DMAC1_9" start="0x51800000" start_s="0x41800000" physical="0x11800000" size="0x00010000"/>
+                <peripheral name="DMAC1_10" start="0x51800000" start_s="0x41800000" physical="0x11800000" size="0x00010000"/>
+                <peripheral name="DMAC1_11" start="0x51800000" start_s="0x41800000" physical="0x11800000" size="0x00010000"/>
+                <peripheral name="DMAC1_12" start="0x51800000" start_s="0x41800000" physical="0x11800000" size="0x00010000"/>
+                <peripheral name="DMAC1_13" start="0x51800000" start_s="0x41800000" physical="0x11800000" size="0x00010000"/>
+                <peripheral name="DMAC1_14" start="0x51800000" start_s="0x41800000" physical="0x11800000" size="0x00010000"/>
+                <peripheral name="DMAC1_15" start="0x51800000" start_s="0x41800000" physical="0x11800000" size="0x00010000"/>
+            </group>
+            <peripheral name="OTP" start="0x51860000" start_s="0x41860000" physical="0x11860000" size="0x00010000" info="One Time Programmable memory"/>
+            <group name="SD" start="0x51C00000" start_s="0x41C00000" physical="0x11C00000" size="0x00010000" info="SD/MMC Host Interface">
+                <peripheral name="SD0" start="0x51C00000" start_s="0x41C00000" physical="0x11C00000" size="0x00010000"/>
+                <peripheral name="SD1" start="0x51C10000" start_s="0x41C10000" physical="0x11C10000" size="0x00010000"/>
+                <peripheral name="SD2" start="0x51C20000" start_s="0x41C20000" physical="0x11C20000" size="0x00010000"/>
+            </group>
+            <group name="GETHER" start="0x51C30000" start_s="0x41C30000" physical="0x11C30000" size="0x00010000" info="Gigabit Ethernet Interface">
+                <peripheral name="GETHER0" start="0x51C30000" start_s="0x41C30000" physical="0x11C30000" size="0x00010000"/>
+                <peripheral name="GETHER1" start="0x51C40000" start_s="0x41C40000" physical="0x11C40000" size="0x00010000"/>
+            </group>
+            <group name="USB" start="0x51E00000" start_s="0x41E00000" physical="0x11E00000" size="0x00010000" info="USB2.0">
+                <peripheral name="USBPHY" start="0x51E00000" start_s="0x41E00000" physical="0x11E00000" size="0x00010000"/>
+                <peripheral name="USB0_OTG_HOST" start="0x51E10000" start_s="0x41E10000" physical="0x11E10000" size="0x00010000"/>
+                <peripheral name="USB0_OTG_FUNC" start="0x51E20000" start_s="0x41E20000" physical="0x11E20000" size="0x00010000"/>
+                <peripheral name="USB1_HOST" start="0x51E30000" start_s="0x41E30000" physical="0x11E30000" size="0x00010000"/>
+            </group>
+            <peripheral name="PCIe" start="0x51E40000" start_s="0x41E40000" physical="0x11E40000" size="0x00010000" info="PCI Express Interface"/>
+            <peripheral name="GIC600" start="0x52400000" start_s="0x42400000" physical="0x12400000" size="0x00100000" info="Generic Interrupt Controller"/>
+            <group name="WDT" start="0x52800000" start_s="0x42800000" physical="0x12800000" size="0x0000400" info="Watchdog Timer">
+                <peripheral name="WDT2" start="0x52800000" start_s="0x42800000" physical="0x12800000" size="0x00000400"/>
+                <peripheral name="WDT1" start="0x52800400" start_s="0x42800400" physical="0x12800400" size="0x00000400"/>
+                <peripheral name="WDT0" start="0x52800800" start_s="0x42800800" physical="0x12800800" size="0x00000400"/>
+            </group>
+            <group name="GTM" start="0x528001000" start_s="0x428001000" physical="0x128001000" size="0x00000400" info="General Timer">
+                <peripheral name="GTM0" start="0x528001000" start_s="0x428001000" physical="0x128001000" size="0x00000400"/>
+                <peripheral name="GTM1" start="0x528001400" start_s="0x428001400" physical="0x128001400" size="0x00000400"/>
+                <peripheral name="GTM2" start="0x528001800" start_s="0x428001800" physical="0x128001800" size="0x00000400"/>
+                <peripheral name="GTM3" start="0x528001C00" start_s="0x428001C00" physical="0x128001C00" size="0x00000400"/>
+                <peripheral name="GTM4" start="0x528002000" start_s="0x428002000" physical="0x128002000" size="0x00000400"/>
+                <peripheral name="GTM5" start="0x528002400" start_s="0x428002400" physical="0x128002400" size="0x00000400"/>
+                <peripheral name="GTM6" start="0x528002800" start_s="0x428002800" physical="0x128002800" size="0x00000400"/>
+                <peripheral name="GTM7" start="0x528002C00" start_s="0x428002C00" physical="0x128002C00" size="0x00000400"/>
+            </group>
+        </peripherals>
+    </resources>
+</rzone>
