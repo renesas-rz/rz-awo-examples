@@ -1,6 +1,6 @@
 # RZ/G3S Cortex-M33 AWO Example
 
-This is the Cortex-M33 AWO - (Always in use (ON) power) Example designed to work with the RZ/G3S Multi-OS environment. This example demonstrates how the Cortex®-M33 core controls and manages system suspend (AWO mode) and resume (ALLON mode) operations in coordination with the Cortex®-A55 core running Linux. It utilizes the RZ/G Flexible Software Package (FSP) for FreeRTOS and integrates with the RZ/G Verified Linux Package (VLP) to provide a complete low-power suspend-to-RAM operation example.
+This is the Cortex-M33 AWO - (Always in use (ON) power) Example designed to work with the RZ/G3S Multi-OS environment. This example demonstrates how the Cortex®-M33 core controls and manages system suspend (AWO mode) and resume (ALLON mode) operations in coordination with the Cortex®-A55 core running Linux. It utilizes the RZ/G Flexible Software Package (FSP) for FreeRTOS and integrates with the Linux BSP Plus support to provide a complete low-power suspend-to-RAM operation example.
 
 ## Overview of sample program behavior
 - CM33 waits for CA55 Linux to enter Suspend-to-RAM.
@@ -52,9 +52,9 @@ For more information to set up your development environment, refer to the follow
 The **freertos_w_awo_rzg3s_evk_example** outputs the message tranfer progress between CPU cores to the console.
 
 ### Hardware setup
-1. Connect USB Type Micro-AB cable to SER3_UART Connector (CN14).
-2. Insert micro SD card containing kernel image, device tree, rootfs support for multi-os communication into CN10 connector on the board.
-3. Connect USB-PD Power Charger to USB Type-C Connector (CN6).<br>
+1. Connect USB Type Micro-AB cable to SER3_UART Connector.
+2. Insert micro SD card containing kernel image, device tree, rootfs support for multi-os communication into SDIO connector on the board.
+3. Connect USB-PD Power Charger to USB_C_PWR_IN.<br>
 <img src=./git_images/connection-board.png width="720">
 
 ### CM33 Sample Project Setup
