@@ -32,14 +32,14 @@ This is the Cortex-M33 AWO - (Always in use (ON) power) Example designed to work
 |Hardware|Version|
 |----|----|
 |[RZ/G3S-EVKIT](https://www.renesas.com/ja/design-resources/boards-kits/rz-g3s-evkit )|
-|[Segger J-link](https://www.segger.com/products/debug-probes/j-link/)| J-Link BASE v11.0 (J-Link DLL v7.96j) |
+|[Segger J-link](https://www.segger.com/products/debug-probes/j-link/)| J-Link BASE v11.0 (J-Link DLL v8.60) |
 
 
 |Software|Version|
 |----|----|
-|e<sup>2</sup> studio|2025-07 (25.7.0)|
+|e<sup>2</sup> studio|2025-12 (25.12.0)|
 |GNU ARM Embedded 13.3-Rel1|13.3.1.arm-13-24|
-|RZ/G FSP|3.1.0|
+|RZ FSP|4.0.0|
 |Tera Term|-|
 
 
@@ -58,7 +58,7 @@ The **freertos_w_awo_rzg3s_evk_example** outputs the message tranfer progress be
 <img src=./git_images/connection-board.png width="720">
 
 ### CM33 Sample Project Setup
-1. Launch **e² studio 2025-07**.  
+1. Launch **e² studio 2025-12**.  
 2. Import the project:  
    **File → Import → Existing Projects into Workspace** and select `freertos_w_awo_rzg3s_evk_example`.  
 3. Build the project (**Project → Build All**).  
