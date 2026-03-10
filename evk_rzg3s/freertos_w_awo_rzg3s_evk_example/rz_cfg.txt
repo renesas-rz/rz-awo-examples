@@ -26,6 +26,7 @@ FSP Configuration
     C Runtime Initialization : Enabled
     Early BSP Initialization : Disabled
     
+  RZ all Common
   Clocks
     PLL1 1100000000Hz
     ICLK Div /1
@@ -800,58 +801,58 @@ FSP Configuration
     
   Module "CANFD (r_canfd)"
     Parameter Checking: Default (BSP)
-    Global Error Interrupt: Callback Channel: Channel 0
+    Global Error Interrupt: Callback Channel: Channel 1
     Global Error Interrupt: Priority: 12
     Reception: FIFOs: Interrupt Priority: 12
     Flexible Data (FD): Protocol Exceptions: Enabled (ISO 11898-1)
-    Global Error Interrupt: Sources: DLC Check, Message Lost, FD Payload Overflow
+    Global Error Interrupt: Sources: 
     Transmission Priority: Buffer Number
     DLC Check: Disabled
     Clock Source: CANFD_PCLK
     Flexible Data (FD): Payload Overflow: Reject
-    Reception: Message Buffers: Number of Buffers: 1
-    Reception: Message Buffers: Payload Size: 16 bytes
+    Reception: Message Buffers: Number of Buffers: 0
+    Reception: Message Buffers: Payload Size: 8 bytes
     Interval Timer Prescaler: 0
     Reception: FIFOs: FIFO 0: Enable: Enabled
     Reception: FIFOs: FIFO 0: Interrupt Mode: Every Frame
     Reception: FIFOs: FIFO 0: Interrupt Threshold: 1/2 full
     Reception: FIFOs: FIFO 0: Payload Size: 64 bytes
-    Reception: FIFOs: FIFO 0: Depth: 16 stages
+    Reception: FIFOs: FIFO 0: Depth: 0 stages
     Reception: FIFOs: FIFO 1: Enable: Disabled
     Reception: FIFOs: FIFO 1: Interrupt Mode: Every Frame
     Reception: FIFOs: FIFO 1: Interrupt Threshold: 1/2 full
     Reception: FIFOs: FIFO 1: Payload Size: 64 bytes
-    Reception: FIFOs: FIFO 1: Depth: 16 stages
+    Reception: FIFOs: FIFO 1: Depth: 0 stages
     Reception: FIFOs: FIFO 2: Enable: Disabled
     Reception: FIFOs: FIFO 2: Interrupt Mode: Every Frame
     Reception: FIFOs: FIFO 2: Interrupt Threshold: 1/2 full
     Reception: FIFOs: FIFO 2: Payload Size: 64 bytes
-    Reception: FIFOs: FIFO 2: Depth: 16 stages
+    Reception: FIFOs: FIFO 2: Depth: 0 stages
     Reception: FIFOs: FIFO 3: Enable: Disabled
     Reception: FIFOs: FIFO 3: Interrupt Mode: Every Frame
     Reception: FIFOs: FIFO 3: Interrupt Threshold: 1/2 full
     Reception: FIFOs: FIFO 3: Payload Size: 64 bytes
-    Reception: FIFOs: FIFO 3: Depth: 16 stages
+    Reception: FIFOs: FIFO 3: Depth: 0 stages
     Reception: FIFOs: FIFO 4: Enable: Disabled
     Reception: FIFOs: FIFO 4: Interrupt Mode: Every Frame
     Reception: FIFOs: FIFO 4: Interrupt Threshold: 1/2 full
     Reception: FIFOs: FIFO 4: Payload Size: 64 bytes
-    Reception: FIFOs: FIFO 4: Depth: 16 stages
+    Reception: FIFOs: FIFO 4: Depth: 0 stages
     Reception: FIFOs: FIFO 5: Enable: Disabled
     Reception: FIFOs: FIFO 5: Interrupt Mode: Every Frame
     Reception: FIFOs: FIFO 5: Interrupt Threshold: 1/2 full
     Reception: FIFOs: FIFO 5: Payload Size: 64 bytes
-    Reception: FIFOs: FIFO 5: Depth: 16 stages
+    Reception: FIFOs: FIFO 5: Depth: 0 stages
     Reception: FIFOs: FIFO 6: Enable: Disabled
     Reception: FIFOs: FIFO 6: Interrupt Mode: Every Frame
     Reception: FIFOs: FIFO 6: Interrupt Threshold: 1/2 full
     Reception: FIFOs: FIFO 6: Payload Size: 64 bytes
-    Reception: FIFOs: FIFO 6: Depth: 16 stages
+    Reception: FIFOs: FIFO 6: Depth: 0 stages
     Reception: FIFOs: FIFO 7: Enable: Disabled
     Reception: FIFOs: FIFO 7: Interrupt Mode: Every Frame
     Reception: FIFOs: FIFO 7: Interrupt Threshold: 1/2 full
-    Reception: FIFOs: FIFO 7: Payload Size: 48 bytes
-    Reception: FIFOs: FIFO 7: Depth: 16 stages
+    Reception: FIFOs: FIFO 7: Payload Size: 64 bytes
+    Reception: FIFOs: FIFO 7: Depth: 0 stages
     Common FIFOs: FIFO 0: Enable: Disabled
     Common FIFOs: FIFO 0: Mode: Receive
     Common FIFOs: FIFO 0: RX Interrupt Enable: Disabled
@@ -1109,18 +1110,21 @@ FSP Configuration
     General: Num Thread Local Storage Pointers: 5
     General: Stack Depth Type: uint32_t
     General: Message Buffer Length Type: size_t
-    Memory Allocation: Support Static Allocation: Enabled
-    Memory Allocation: Support Dynamic Allocation: Enabled
-    Memory Allocation: Total Heap Size: 4096
-    Memory Allocation: Application Allocated Heap: Enabled
+    Memory Allocations: Support Static Allocation: Enabled
+    Memory Allocations: Support Dynamic Allocation: Enabled
+    Memory Allocations: Total Heap Size: 4096
+    Memory Allocations: Application Allocated Heap: Enabled
     Stats: Generate Run Time Stats: Disabled
     Timers: Use Timers: Enabled
     Timers: Timer Task Priority: 3
     Timers: Timer Queue Length: 10
     Timers: Timer Task Stack Depth: 128
     General: Library Max Syscall Interrupt Priority: Priority 1
-    General: Assert: assert(x)
+    General: Max Syscall Interrupt Priority: configLIBRARY_MAX_SYSCALL_INTERRUPT_PRIORITY
+    General: Assert: 
     General: Include Application Defined Privileged Functions: Disabled
+    General: Use POSIX errno: Disabled
+    General: Use Application Task Tag: Disabled
     Optional Functions: vTaskPrioritySet() Function: Enabled
     Optional Functions: uxTaskPriorityGet() Function: Enabled
     Optional Functions: vTaskDelete() Function: Enabled
@@ -1138,7 +1142,8 @@ FSP Configuration
     Optional Functions: xTaskAbortDelay() Function: Disabled
     Optional Functions: xTaskGetHandle() Function: Disabled
     Optional Functions: xTaskResumeFromISR() Function: Enabled
-    Logging: Print String Function: printf(x)
+    Optional Functions: xSemaphoreGetMutexHolder() Function: Disabled
+    Logging: Print String Function: 
     Logging: Logging Max Message Length: 192
     Logging: Logging Include Time and Task Name: Disabled
     Logging: Debug Logging Name: Log Name
@@ -1267,7 +1272,7 @@ FSP Configuration
       General: Period Unit: Seconds
       General: Count Source: P0CLK
       Interrupts: Callback: periodic_timer_msgq_cb
-      Interrupts: Underflow Interrupt Priority: 2
+      Interrupts: Underflow Interrupt Priority: 5
       Interrupts: Generate at Start: Disable
       Extra Features: GTM Mode: Interval timer mode
       
@@ -1279,7 +1284,7 @@ FSP Configuration
       General: Period Unit: Seconds
       General: Count Source: P0CLK
       Interrupts: Callback: periodic_timer_semphr_cb
-      Interrupts: Underflow Interrupt Priority: 2
+      Interrupts: Underflow Interrupt Priority: 5
       Interrupts: Generate at Start: Disable
       Extra Features: GTM Mode: Interval timer mode
       
@@ -1354,10 +1359,10 @@ FSP Configuration
       Bitrate: Manual: Data: Time Segment 1 (Tq): 16
       Bitrate: Manual: Data: Time Segment 2 (Tq): 8
       Bitrate: Manual: Data: Sync Jump Width (Tq): 1
-      Bitrate: Manual: Use manual settings: Yes
+      Bitrate: Manual: Use manual settings: No
       Interrupts: Callback: canfd_ch0_callback
       Transmit Interrupts: TXMB 0
-      Channel Error Interrupts: Error Warning, Error Passive, Bus-Off Entry, Bus-Off Recovery, Overload
+      Channel Error Interrupts: 
       Interrupts: Channel Interrupt Priority Level: 12
       TX Buffer Merge Mode: Disable(Not Supported)
       Filter List Array: p_canfd_ch0_afl
@@ -1370,18 +1375,18 @@ FSP Configuration
       Bitrate: Automatic: Data Rate (bps): 2000000
       Bitrate: Automatic: Sample Point (%): 75
       Bitrate: Delay Compensation: Enable
-      Bitrate: Manual: Nominal: Prescaler (divisor): 2
-      Bitrate: Manual: Nominal: Time Segment 1 (Tq): 74
-      Bitrate: Manual: Nominal: Time Segment 2 (Tq): 25
-      Bitrate: Manual: Nominal: Sync Jump Width (Tq): 10
+      Bitrate: Manual: Nominal: Prescaler (divisor): 1
+      Bitrate: Manual: Nominal: Time Segment 1 (Tq): 29
+      Bitrate: Manual: Nominal: Time Segment 2 (Tq): 10
+      Bitrate: Manual: Nominal: Sync Jump Width (Tq): 4
       Bitrate: Manual: Data: Prescaler (divisor): 1
-      Bitrate: Manual: Data: Time Segment 1 (Tq): 16
-      Bitrate: Manual: Data: Time Segment 2 (Tq): 8
+      Bitrate: Manual: Data: Time Segment 1 (Tq): 12
+      Bitrate: Manual: Data: Time Segment 2 (Tq): 4
       Bitrate: Manual: Data: Sync Jump Width (Tq): 1
-      Bitrate: Manual: Use manual settings: Yes
+      Bitrate: Manual: Use manual settings: No
       Interrupts: Callback: canfd_ch1_callback
       Transmit Interrupts: TXMB 0
-      Channel Error Interrupts: Error Warning, Error Passive, Bus-Off Entry, Bus-Off Recovery, Overload
+      Channel Error Interrupts: 
       Interrupts: Channel Interrupt Priority Level: 12
       TX Buffer Merge Mode: Disable(Not Supported)
       Filter List Array: p_canfd_ch1_afl
@@ -1407,7 +1412,7 @@ FSP Configuration
   Thread "Receiver Task"
     Symbol: receiver_task
     Name: Receiver Task
-    Stack size (bytes): 512
+    Stack size (bytes): 1024
     Priority: 1
     Thread Context: NULL
     Memory Allocation: Dynamic

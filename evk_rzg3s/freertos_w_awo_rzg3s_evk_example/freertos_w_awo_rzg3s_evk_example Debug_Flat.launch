@@ -2,8 +2,7 @@
 <launchConfiguration type="com.renesas.cdt.launch.dsf.gdbremote.launchConfigurationType">
     <booleanAttribute key=".setStepMode" value="false"/>
     <stringAttribute key="com.renesas.cdt.core.additionalServerArgs" value=""/>
-    <intAttribute key="com.renesas.cdt.core.connectionTimeout" value="30"/>
-    <stringAttribute key="com.renesas.cdt.core.imageFileName" value="${workspace_loc:\freertos_w_awo_rzg3s_evk_example\Debug/freertos_w_awo_rzg3s_evk_example.elf}"/>
+    <intAttribute key="com.renesas.cdt.core.connectionTimeout" value="120"/>
     <stringAttribute key="com.renesas.cdt.core.initCommands" value=""/>
     <stringAttribute key="com.renesas.cdt.core.ipAddress" value="localhost"/>
     <stringAttribute key="com.renesas.cdt.core.jtagDeviceId" value="com.renesas.hardwaredebug.rz.jlink"/>
@@ -16,8 +15,7 @@
     <listAttribute key="com.renesas.cdt.core.listGDBPort">
         <listEntry value="61234"/>
     </listAttribute>
-    <booleanAttribute key="com.renesas.cdt.core.loadImage" value="true"/>
-    <stringAttribute key="com.renesas.cdt.core.optionInitCommands" value="monitor force_rtos_on&#10;&#10;"/>
+    <stringAttribute key="com.renesas.cdt.core.optionInitCommands" value="monitor force_rtos_off&#10;&#10;"/>
     <intAttribute key="com.renesas.cdt.core.portNumber" value="61234"/>
     <stringAttribute key="com.renesas.cdt.core.runCommands" value=""/>
     <stringAttribute key="com.renesas.cdt.core.secondGDBExe" value="green_dsp-elf-gdb"/>
@@ -25,16 +23,14 @@
     <intAttribute key="com.renesas.cdt.core.secondGdbPortNumber" value="61237"/>
     <stringAttribute key="com.renesas.cdt.core.serverParam" value="-g SEGGERJLINKARM -t R9A08G045S33_M33_0 -uConnectionTimeout= 30 -uSelect= &quot;USB&quot; -uJLinkSetting= &quot;${workspace_loc:/${ProjName}}/${LaunchConfigName}.jlink&quot; -uJLinkLog= &quot;${workspace_loc:/${ProjName}}/JLinkLog.log&quot; -uLowPower= 0 -uInteface= &quot;SWD&quot; -uIfSpeed= &quot;15000&quot; -uResetBeginConnection= 0 -uNoReset= 1 -uIdCodeBytes=  &quot;FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF&quot; -uSecureVectorAddress= &quot;&amp;__Secure_Vectors&quot; -uNonSecureVectorAddress= &quot;&amp;__Vectors&quot; -uDisconnectionMode= &quot;2&quot; -uSWOcoreClock= &quot;0&quot; -uresetOnReload= 1 -n &quot;0&quot; -uFlashBp= 1 -uSimulation= 0 -ueraseRomOnDownload= 0 -ueraseDataRomOnDownload= 0 -uOSRestriction= 0 -uAllowCachingFlash= 0 -uResetBehavior= &quot;Reset&quot;"/>
     <booleanAttribute key="com.renesas.cdt.core.setResume" value="true"/>
-    <booleanAttribute key="com.renesas.cdt.core.setStopAt" value="true"/>
     <booleanAttribute key="com.renesas.cdt.core.startServer" value="true"/>
-    <stringAttribute key="com.renesas.cdt.core.stopAt" value="main"/>
     <stringAttribute key="com.renesas.cdt.core.targetDevice" value="R9A08G045S33GBG_CM33"/>
     <booleanAttribute key="com.renesas.cdt.core.useRemoteTarget" value="true"/>
-    <stringAttribute key="com.renesas.cdt.debug.ioview.dsf.registerSelection0" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;no&quot;?&gt;&#13;&#10;&lt;selectedRegisterList ioFilePath=&quot;C:\Users\a5150330\.eclipse\com.renesas.platform_1017044334\DebugComp\RZ\IoFiles\R9A08G045S33GBG_CM33.sfrx&quot;/&gt;&#13;&#10;"/>
+    <stringAttribute key="com.renesas.cdt.debug.ioview.dsf.registerSelection0" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;no&quot;?&gt;&#13;&#10;&lt;selectedRegisterList ioFilePath=&quot;C:\Users\a5150330\.eclipse\com.renesas.platform_1355888979\DebugComp\RZ\IoFiles\R9A08G045S33GBG_CM33.sfrx&quot;/&gt;&#13;&#10;"/>
     <stringAttribute key="com.renesas.cdt.launch.dsf.IO_MAP" value="${support_area_loc}"/>
     <booleanAttribute key="com.renesas.cdt.launch.dsf.USE_DEFAULT_IO_MAP" value="true"/>
     <listAttribute key="com.renesas.cdt.launch.dsf.downloadImages">
-        <listEntry value="|true|true|true||true|No core|INTERNAL_MEMORY||false"/>
+        <listEntry value="|true|true|true|0|true|No core|INTERNAL_MEMORY||false"/>
     </listAttribute>
     <booleanAttribute key="com.renesas.cdt.launch.dsf.downloadImagesUpgradedV30" value="true"/>
     <listAttribute key="com.renesas.cdt.launch.dsf.externalFlashDestinationAddresses"/>
@@ -89,7 +85,7 @@
     <intAttribute key="com.renesas.hardwaredebug.arm.jlink.options.ArmJLinkDebugToolSettingsTree.rbtm" value="0"/>
     <booleanAttribute key="com.renesas.hardwaredebug.arm.jlink.options.ArmJLinkDebugToolSettingsTree.rbtm.everycycleenable" value="true"/>
     <booleanAttribute key="com.renesas.hardwaredebug.arm.jlink.options.ArmJLinkDebugToolSettingsTree.resetAfterReload" value="true"/>
-    <booleanAttribute key="com.renesas.hardwaredebug.arm.jlink.options.ArmJLinkDebugToolSettingsTree.rtosIntegrationInDebugView" value="true"/>
+    <booleanAttribute key="com.renesas.hardwaredebug.arm.jlink.options.ArmJLinkDebugToolSettingsTree.rtosIntegrationInDebugView" value="false"/>
     <booleanAttribute key="com.renesas.hardwaredebug.arm.jlink.options.ArmJLinkDebugToolSettingsTree.rtosintegrationthreadsrunning" value="false"/>
     <booleanAttribute key="com.renesas.hardwaredebug.arm.jlink.release.reset" value="false"/>
     <stringAttribute key="com.renesas.hardwaredebug.arm.jlink.reset.PcOnReset" value=""/>
@@ -114,11 +110,11 @@
     <intAttribute key="com.renesas.hardwaredebug.arm.jlink.supply_voltage_asp" value="0"/>
     <booleanAttribute key="com.renesas.hardwaredebug.arm.jlink.use_multidevice_synchronous_debug" value="false"/>
     <booleanAttribute key="com.renesas.hardwaredebug.timemeasurement" value="false"/>
-    <intAttribute key="org.eclipse.cdt.debug.gdbjtag.core.delay" value="0"/>
+    <intAttribute key="org.eclipse.cdt.debug.gdbjtag.core.delay" value="3"/>
     <booleanAttribute key="org.eclipse.cdt.debug.gdbjtag.core.doHalt" value="false"/>
     <booleanAttribute key="org.eclipse.cdt.debug.gdbjtag.core.doReset" value="false"/>
-    <stringAttribute key="org.eclipse.cdt.debug.gdbjtag.core.imageFileName" value="C:\Work\freertos_w_awo_rzg3s_evk_example\Debug\freertos_w_awo_rzg3s_evk_example.elf"/>
-    <stringAttribute key="org.eclipse.cdt.debug.gdbjtag.core.imageOffset" value=""/>
+    <stringAttribute key="org.eclipse.cdt.debug.gdbjtag.core.imageFileName" value="C:\Workspace\Work_Single\freertos_w_awo_rzg3s_evk_example\Debug\freertos_w_awo_rzg3s_evk_example.elf"/>
+    <stringAttribute key="org.eclipse.cdt.debug.gdbjtag.core.imageOffset" value="0"/>
     <stringAttribute key="org.eclipse.cdt.debug.gdbjtag.core.initCommands" value=""/>
     <booleanAttribute key="org.eclipse.cdt.debug.gdbjtag.core.loadImage" value="true"/>
     <booleanAttribute key="org.eclipse.cdt.debug.gdbjtag.core.loadSymbols" value="true"/>
@@ -128,8 +124,8 @@
     <booleanAttribute key="org.eclipse.cdt.debug.gdbjtag.core.setResume" value="false"/>
     <booleanAttribute key="org.eclipse.cdt.debug.gdbjtag.core.setStopAt" value="true"/>
     <stringAttribute key="org.eclipse.cdt.debug.gdbjtag.core.stopAt" value="main"/>
-    <stringAttribute key="org.eclipse.cdt.debug.gdbjtag.core.symbolsFileName" value="C:\Work\freertos_w_awo_rzg3s_evk_example\Debug\freertos_w_awo_rzg3s_evk_example.elf"/>
-    <stringAttribute key="org.eclipse.cdt.debug.gdbjtag.core.symbolsOffset" value=""/>
+    <stringAttribute key="org.eclipse.cdt.debug.gdbjtag.core.symbolsFileName" value="C:\Workspace\Work_Single\freertos_w_awo_rzg3s_evk_example\Debug\freertos_w_awo_rzg3s_evk_example.elf"/>
+    <stringAttribute key="org.eclipse.cdt.debug.gdbjtag.core.symbolsOffset" value="0"/>
     <booleanAttribute key="org.eclipse.cdt.debug.gdbjtag.core.useFileForImage" value="false"/>
     <booleanAttribute key="org.eclipse.cdt.debug.gdbjtag.core.useFileForSymbols" value="false"/>
     <booleanAttribute key="org.eclipse.cdt.debug.gdbjtag.core.useProjBinaryForImage" value="true"/>
@@ -150,6 +146,7 @@
     <listAttribute key="org.eclipse.debug.core.MAPPED_RESOURCE_TYPES">
         <listEntry value="4"/>
     </listAttribute>
+    <booleanAttribute key="org.eclipse.debug.ui.ATTR_LAUNCH_IN_BACKGROUND" value="false"/>
     <stringAttribute key="org.eclipse.dsf.launch.MEMORY_BLOCKS" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;no&quot;?&gt;&lt;memoryBlockExpressionList context=&quot;reserved-for-future-use&quot;/&gt;"/>
     <stringAttribute key="process_factory_id" value="org.eclipse.cdt.dsf.gdb.GdbProcessFactory"/>
 </launchConfiguration>
