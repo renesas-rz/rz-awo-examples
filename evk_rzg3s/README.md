@@ -1,6 +1,6 @@
 # RZ/G3S Cortex-M33 AWO Example
 
-This is the Cortex-M33 AWO - (Always in use (ON) power) Example designed to work with the RZ/G3S Multi-OS environment. This example demonstrates how the Cortex®-M33 core controls and manages system suspend (AWO mode) and resume (ALLON mode) operations in coordination with the Cortex®-A55 core running Linux. It utilizes the RZ/G Flexible Software Package (FSP) for FreeRTOS and integrates with the Linux BSP Plus support to provide a complete low-power suspend-to-RAM operation example.
+This is the Cortex-M33 AWO - (Always in use (ON) power) Example designed to work with the RZ Multi-OS environment. This example demonstrates how the Cortex®-M33 core controls and manages system suspend (AWO mode) and resume (ALLON mode) operations in coordination with the Cortex®-A55 core running Linux. It utilizes the RZ Flexible Software Package (FSP) for FreeRTOS and integrates with the Linux BSP Plus support to provide a complete low-power suspend-to-RAM operation example.
 
 ## Overview of sample program behavior
 - CM33 waits for CA55 Linux to enter Suspend-to-RAM.
